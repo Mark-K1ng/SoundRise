@@ -1,16 +1,44 @@
-body {
+body, html {
     background-color: rgb(80, 80, 80);
-    padding: 5px;
+    padding: 0px;
     margin: 0px;
 }
 
 .container {
-    height: 100px;
+    position: relative;
+    height: 80px;
     width: 100%;
-    background-color: aqua;
+    background-color: #00ffff;
     top: 0%;
-    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.container p {
+    position: absolute;
+    margin: 0 auto;
+    max-width: fit-content;
+    color: black;
+    font-size: 40px;
+    font-family: sans-serif;
+    user-select: none;
+    text-decoration: none;
+    left: max(10px, 1%);
+    cursor:pointer;
+}
+
+.container button{
+    position: absolute;
+    right: max(1%, 10px);
+    background-color: crimson;
+    margin: 0;
+    max-width: fit-content;
     font-size: 30px;
     font-family: sans-serif;
-    font-weight: 200;
+    cursor:pointer;
+    border: none;
+}
+
+.button:active {
+    background-color: blueviolet;
 }
