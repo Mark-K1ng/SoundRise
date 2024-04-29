@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(80, 80, 80);
+}
+
+.container {
+    height: 500px;
+    width: 250px;
+    background-color: aqua;
+}
