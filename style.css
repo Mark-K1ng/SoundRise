@@ -2,37 +2,54 @@ body, html {
     background-color: rgb(80, 80, 80);
     padding: 0px;
     margin: 0px;
+    height: 120%;
 }
 
 .container {
-    position: relative;
+    position: sticky;
     height: 80px;
     width: 100%;
     background-color: #00ffff;
     top: 0%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.container p {
-    position: absolute;
-    margin: 0 auto;
+.icon {
+    display: flex;
+    color: blue;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.navbox{
+    position: relative;
+    width: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    background-color:darkseagreen;
+}
+
+.navbox p {
+    position: relative;
     max-width: fit-content;
     color: black;
     font-size: 40px;
     font-family: sans-serif;
     user-select: none;
     text-decoration: none;
-    left: max(10px, 1%);
+    line-height: 1;
+    margin: 0px 20px 0px 20px;
+    padding: 0;
     cursor:pointer;
 }
 
-.container button{
+.button{
     position: absolute;
-    right: max(1%, 10px);
+    height: 100%;
+    right: 0%;
     background-color: crimson;
-    margin: 0;
-    max-width: fit-content;
     font-size: 30px;
     font-family: sans-serif;
     cursor:pointer;
@@ -41,4 +58,52 @@ body, html {
 
 .button:active {
     background-color: blueviolet;
+}
+
+.group {
+    height: 200px;
+    width: max(70%, 200px);
+    display: flex;
+    background-color:cornflowerblue;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+
+.box {
+    height: max(200px, 20px);
+    width: max(200px, 20px);
+    background-color: gold;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size:20px;
+    user-select: none;
+    transition: background-color 0.5s, font-size 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.box:hover {
+    background-color: blueviolet;
+    font-size: 50px;
+}
+
+@media screen and (max-width:1000px) {
+    body {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    body {
+        height: 400px;
+    }
+}
+
+::-webkit-scrollbar {
+    background-color:coral;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: burlywood;
 }
