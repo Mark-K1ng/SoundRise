@@ -5,6 +5,14 @@ body, html {
     height: 120%;
 }
 
+* {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
 .container {
     position: sticky;
     height: 80px;
@@ -23,12 +31,22 @@ body, html {
     cursor: pointer;
 }
 
+.child {
+    display: flex;
+
+}
+
+nav {
+    
+}
+
 .navbox{
-    position: relative;
-    width: calc(100% - 40px);
+    width: 100%;
     display: flex;
     align-items: center;
     background-color:darkseagreen;
+    justify-content: space-between;
+    padding: 15px;
 }
 
 .navbox p {
@@ -46,7 +64,6 @@ body, html {
 }
 
 .button{
-    position: absolute;
     height: 100%;
     right: 0%;
     background-color: crimson;
@@ -62,16 +79,16 @@ body, html {
 
 .group {
     height: 200px;
-    width: max(70%, 200px);
+    width: 100%;
     display: flex;
-    background-color:cornflowerblue;
+    border: 1px solid red;
     margin: 20px auto;
     justify-content: space-between;
 }
 
 .box {
-    height: max(200px, 20px);
-    width: max(200px, 20px);
+    height: 200px;
+    width: 200px;
     background-color: gold;
     display: inline-flex;
     justify-content: center;
@@ -88,16 +105,54 @@ body, html {
     font-size: 50px;
 }
 
-@media screen and (max-width:1000px) {
-    body {
-        width: 1000px;
-    }
+.parent {
+    width: 100%;
+    border: 1px solid red;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-@media screen and (max-height: 400px) {
-    body {
-        height: 400px;
+.children {
+    width: 45%;
+    border: 1px solid greenyellow;
+    padding: 15px;
+}
+
+.children:nth-child(3) {
+    width: 100%;
+    margin-top: 15px;
+}
+
+@media screen and (max-width:1000px) {
+
+    .children:nth-child(3) {
+        width: initial;
+
     }
+
+    .parent{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .children {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .group {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .group div {
+        width: 100%;
+        margin-top: 10px;
+    }
+
 }
 
 ::-webkit-scrollbar {
