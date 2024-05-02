@@ -69,8 +69,8 @@ nav {
 
 .slidingbar {
     position: fixed;
-    left: -300px;
-    width: 300px;
+    left: var(--NSBWidth);
+    width: var(--SBWidth);
     top: var(--navbar-height);
     bottom: var(--musicbar-height);
     background-color: rgba(173, 216, 230, 1);
@@ -78,11 +78,26 @@ nav {
     border: 1px solid greenyellow;
 }
 
-.content {
-    font-size: 50px;
+.options {
+    font-size: 30px;
     user-select: none;
-    cursor: pointer;
     width: fit-content;
+    border: 1px solid red;
+    margin: 15px;
+}
+
+.options div {
+    display: flex;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+
+.options p {
+    margin-left: 15px;
+}
+
+.tab:nth-child(1) {
+    margin: 0;
 }
 
 .group {
