@@ -1,0 +1,7 @@
+{
+    "song1": {
+      "img": "src/img/image1.jpg",
+      "mp3": "src/mp3/sound1.mp3",
+      "name": "src/name.txt"
+    }
+  }

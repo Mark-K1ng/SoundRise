@@ -30,7 +30,6 @@ nav {
 
 .navbar p {
     position: relative;
-    max-width: fit-content;
     color: black;
     font-size: 40px;
     font-family: sans-serif;
@@ -100,35 +99,43 @@ nav {
 }
 
 .category {
-    margin-top: 100px;
+    margin-top: 95px;
     width: 100%;
-    height: auto;
     background-color: chocolate;
     display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-auto-rows: auto;
     border: 1px solid red;
     padding: 15px;
+    gap: 15px;
 }
 
 .song {
-    width: 400px;
     padding: 10px;
-    font-size: 30px;
-    font-family: sans-serif;
     border: 1px solid greenyellow;
-    margin-bottom: 15px;
+    display: inline-flex;
     cursor: pointer;
     user-select: none;
 }
 
-.song:nth-child(n+4) {
-    margin-bottom: 0px;
+.song p {
+    width: fit-content;
+    height: fit-content;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.song img {
+    width: var(--text-height);
+    height: var(--text-height);
 }
 
 .group {
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     width: 100%;
     display: flex;
     border: 1px solid red;
@@ -184,10 +191,6 @@ nav {
 
 @media screen and (max-width:1000px) {
 
-    .children:nth-child(3) {
-        width: initial;
-    }
-
     .parent{
         display: flex;
         flex-direction: column;
@@ -195,7 +198,15 @@ nav {
 
     .children {
         width: 100%;
-        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .children:nth-child(1) {
+        margin-bottom: 0px;
+    }
+
+    .children:nth-child(3) {
+        width: initial;
     }
 
     .group {
@@ -206,9 +217,17 @@ nav {
 
     .group div {
         width: 100%;
-        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
+    .group div:nth-child(3) {
+        margin-bottom: 0px;
+    }
+
+    .category {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 ::-webkit-scrollbar {
