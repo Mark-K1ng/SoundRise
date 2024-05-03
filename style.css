@@ -38,7 +38,6 @@ nav {
     text-decoration: none;
     line-height: 1;
     margin: 0px 20px 0px 20px;
-    padding: 0;
     cursor:pointer;
 }
 
@@ -100,10 +99,36 @@ nav {
     margin: 0;
 }
 
+.category {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    background-color: chocolate;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    border: 1px solid red;
+    padding: 15px;
+}
+
+.song {
+    width: 400px;
+    padding: 10px;
+    font-size: 30px;
+    font-family: sans-serif;
+    border: 1px solid greenyellow;
+    margin-bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.song:nth-child(n+4) {
+    margin-bottom: 0px;
+}
+
 .group {
-    margin-top: 120px;
-    margin-bottom: 20px;
-    height: 200px;
+    margin-top: 35px;
+    margin-bottom: 35px;
     width: 100%;
     display: flex;
     border: 1px solid red;
@@ -118,7 +143,7 @@ nav {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    font-size:20px;
+    font-size: 20px;
     user-select: none;
     transition: background-color 0.5s, font-size 0.5s;
     transition-timing-function: ease-in-out;
@@ -161,7 +186,6 @@ nav {
 
     .children:nth-child(3) {
         width: initial;
-
     }
 
     .parent{
