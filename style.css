@@ -69,8 +69,8 @@ nav {
 
 .slidingbar {
     position: fixed;
-    left: var(--NSBWidth);
-    width: var(--SBWidth);
+    left: calc(var(--NTabWidth) - 30px);
+    width: calc(var(--TabWidth) + 30px);
     top: var(--navbar-height);
     bottom: var(--musicbar-height);
     background-color: rgba(173, 216, 230, 1);

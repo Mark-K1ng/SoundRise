@@ -9,22 +9,28 @@ HeightFinder();
 
 
 function WidthFinder() {
-  var slidingbarWidth = document.querySelector('.slidingbar').offsetWidth;
-  var negSlidingbarWidth = slidingbarWidth * -1;
+  var tabWidth = document.querySelector('.options').offsetWidth;
+  var negTabWidth = tabWidth * -1;
 
-  document.documentElement.style.setProperty('--SBWidth', slidingbarWidth + 'px');
-  document.documentElement.style.setProperty('--NSBWidth', negSlidingbarWidth + 'px');
+  document.documentElement.style.setProperty('--TabWidth', tabWidth + 'px');
+  document.documentElement.style.setProperty('--NTabWidth', negTabWidth + 'px');
+
+  console.log(tabWidth);
 }
-WidthFinder();
 
 
-document.querySelector(".icon").addEventListener("click", function() {
-  var slidingbar = document.querySelector(".slidingbar");
-  var slidingbarLeft = window.getComputedStyle(slidingbar).getPropertyValue("left");
-  
-  if (slidingbarLeft === "0px") {
-    slidingbar.style.left = `var(--NSBWidth)`;
-  } else {
-    slidingbar.style.left = "0px";
-  }
-});
+window.onload = function() {
+
+  WidthFinder();
+
+  document.querySelector(".icon").addEventListener("click", function() {
+    var slidingbar = document.querySelector(".slidingbar");
+    var slidingbarLeft = window.getComputedStyle(slidingbar).getPropertyValue("left");
+    
+    if (slidingbarLeft === "0px") {
+      slidingbar.style.left = `calc(var(--NTabWidth) - 30px)`;
+    } else {
+      slidingbar.style.left = "0px";
+    }
+  });
+};
