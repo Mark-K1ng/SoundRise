@@ -9,8 +9,9 @@ HeightFinder();
 
 
 function WidthFinder() {
-  var tabWidth = document.querySelector('.options').offsetWidth;
-  var negTabWidth = tabWidth * -1;
+  var rect = document.querySelector('.slidingbar').getBoundingClientRect();
+  var tabWidth = rect.width;
+  var negTabWidth = -tabWidth;
 
   document.documentElement.style.setProperty('--TabWidth', tabWidth + 'px');
   document.documentElement.style.setProperty('--NTabWidth', negTabWidth + 'px');
@@ -28,7 +29,7 @@ window.onload = function() {
     var slidingbarLeft = window.getComputedStyle(slidingbar).getPropertyValue("left");
     
     if (slidingbarLeft === "0px") {
-      slidingbar.style.left = `calc(var(--NTabWidth) - 30px)`;
+      slidingbar.style.left = `var(--NTabWidth)`;
     } else {
       slidingbar.style.left = "0px";
     }
