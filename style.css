@@ -2,7 +2,6 @@ body, html {
     background-color: rgb(80, 80, 80);
     padding: 0px;
     margin: 0px;
-    height: 120%;
 }
 
 * {
@@ -143,8 +142,8 @@ nav {
 }
 
 .box {
-    height: 200px;
-    width: 200px;
+    height: 190px;
+    width: 190px;
     background-color: gold;
     display: inline-flex;
     justify-content: center;
@@ -165,6 +164,7 @@ nav {
     width: 100%;
     border: 1px solid red;
     padding: 15px;
+    margin-bottom: 65px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -174,22 +174,32 @@ nav {
     width: 45%;
     border: 1px solid greenyellow;
     padding: 15px;
+    margin-bottom: 15px;
 }
 
 .children:nth-child(3) {
     width: 100%;
-    margin-top: 15px;
+    margin-bottom: 0px;
 }
 
 .musicbar {
     position: fixed;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     bottom: 0px;
     width: 100%;
     height: 50px;
+    padding: 10px 25px 10px 25px;
     background-color:turquoise;
 }
 
-@media screen and (max-width:1000px) {
+.musicbar div {
+    display: inline-flex;
+    gap: 10px;
+}
+
+@media screen and (max-width:980px) {
 
     .parent{
         display: flex;
@@ -199,10 +209,6 @@ nav {
     .children {
         width: 100%;
         margin-bottom: 15px;
-    }
-
-    .children:nth-child(1) {
-        margin-bottom: 0px;
     }
 
     .children:nth-child(3) {
