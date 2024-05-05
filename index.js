@@ -1,14 +1,13 @@
 function HeightFinder() {
   var navbarHeight = document.querySelector('.navbar').offsetHeight;
   var musicbarHeight = document.querySelector('.musicbar').offsetHeight;
-  var rect = document.querySelector('.song p').getBoundingClientRect();
-  var textHeight = rect.height;
+  var textHeight = document.querySelector('.song p').offsetHeight
+  var pointHeight = document.querySelector('.progressingbar').offsetHeight - (document.querySelector('.point').offsetHeight / 2);
   
   document.documentElement.style.setProperty('--navbar-height', navbarHeight + 'px');
   document.documentElement.style.setProperty('--musicbar-height', musicbarHeight + 'px');
   document.documentElement.style.setProperty('--text-height', textHeight + 'px');
-
-  console.log(textHeight)
+  document.documentElement.style.setProperty('--point-height', pointHeight + 'px');
 }
 HeightFinder();
 
@@ -20,9 +19,45 @@ function WidthFinder() {
 
   document.documentElement.style.setProperty('--TabWidth', tabWidth + 'px');
   document.documentElement.style.setProperty('--NTabWidth', negTabWidth + 'px');
-
-  console.log(tabWidth);
 }
+
+
+function PositionFinder() {
+  var rect = document.querySelector('.volume').getBoundingClientRect();
+  var rect2 = document.querySelector('.volumeparent').getBoundingClientRect();
+
+  var volumePosition = rect.left;
+  var volumeWidth = rect.width;
+  var volumeParentWidth = rect2.width;
+  var volumeParentPosition = volumePosition - ((volumeParentWidth - volumeWidth) / 2);
+  
+  document.documentElement.style.setProperty('--volume-left', volumePosition + 'px');
+  document.documentElement.style.setProperty('--volume-width', volumeWidth + 'px');
+  document.documentElement.style.setProperty('--volumeParent-positon', volumeParentPosition + 'px')
+}
+PositionFinder();
+
+
+function ButtonToggle() {
+  
+  document.getElementById('playbutton').addEventListener('click', function() {
+    var iconElement = document.getElementById('playbutton');
+    if (iconElement.classList.contains('fa-play')) {
+      iconElement.classList.remove('fa-play');
+      iconElement.classList.add('fa-pause');
+
+      var a = 1;
+      console.log(a);
+    } else {
+      iconElement.classList.remove('fa-pause');
+      iconElement.classList.add('fa-play');
+      
+      var a = 0;
+      console.log(a);
+    }
+  });
+}
+ButtonToggle();
 
 
 window.onload = function() {
@@ -39,4 +74,7 @@ window.onload = function() {
       slidingbar.style.left = "0px";
     }
   });
+
+  var a = 0;
+  console.log(a);
 };
