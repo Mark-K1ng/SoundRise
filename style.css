@@ -111,6 +111,7 @@ nav {
     padding: 10px;
     border: 1px solid greenyellow;
     display: inline-flex;
+    align-items: center;
     cursor: pointer;
     user-select: none;
 }
@@ -118,7 +119,7 @@ nav {
 .song p {
     width: fit-content;
     height: fit-content;
-    font-size: 30px;
+    font-size: 22px;
     font-family: sans-serif;
     margin-left: 10px;
     display: inline-flex;

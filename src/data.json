@@ -1,7 +1,13 @@
 {
     "song1": {
+      "name": "particles",
       "img": "src/img/image1.jpg",
-      "mp3": "src/mp3/sound1.mp3",
-      "name": "src/name.txt"
+      "mp3": "src/mp3/sound1.mp3"
+    },
+
+    "song2": {
+      "name": "Memory Reboot(Slowed)",
+      "img": "src/img/image2.jpg",
+      "mp3": "src/mp3/sound2.mp3"
     }
   }
